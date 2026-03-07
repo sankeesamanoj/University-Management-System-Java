@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Menu {
     public void printMenu(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Nalla Malla Reddy Engineering College");
+        System.out.println("Welcome to my Engineering College");
         System.out.println("===================== MENU =====================");
         System.out.println("options:");
         System.out.println("1. Log-in");

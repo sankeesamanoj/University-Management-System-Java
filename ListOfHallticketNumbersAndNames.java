@@ -5,12 +5,13 @@ public class ListOfHallticketNumbersAndNames {
     static void addStudent(long hallTicketNumber, String name){
         students.put(hallTicketNumber, name);
     }
-    static String  getStudentName(long hallTicketNumber){
+    static boolean  getStudentName(long hallTicketNumber){
         if (students.containsKey(hallTicketNumber)) {
-            return "Welcome: "+students.get(hallTicketNumber);
+            return true;
         }
         else{
-            return "You are not registered! ";
+            System.out.println("You are not registered! ");
+            return false;
         }
     }
     static boolean checkHallTicketNumber(long hallTicketNumber){

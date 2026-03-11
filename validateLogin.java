@@ -1,12 +1,16 @@
 public class validateLogin {
-    boolean validateStudentLogin(StudentNode head, long hallTecketNumber, String password){
-        StudentNode temp = head;
+    static boolean validateStudentLogin(long hallTecketNumber, String password){
+        StudentNode temp = StudentLinkedList.head;
 
         while (temp != null) {
             if (temp.getedHallTecketNumber() == hallTecketNumber && 
                 temp.getPassword().equals(password)) {
+                System.out.println();
+                System.out.println("================");
                 System.out.println("Login Successful");
                 System.out.println("Welcome " + temp.getName());
+                System.out.println("================");
+                System.out.println();
                 return true;
             }
             temp = temp.next;

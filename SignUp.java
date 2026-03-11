@@ -13,6 +13,8 @@ public class SignUp {
     private String email;
     private String address;
     private long newHallTecketNumber;
+    private StudentNode head;
+    private String password;
 
     void setName(String name){
         this.name = name;
@@ -68,6 +70,7 @@ public class SignUp {
         System.out.println("Hall Tecket Number: "+newHallTecketNumber);
         System.out.println("=========================================");
         System.out.println();
+        studentLinkedList();
         Menu.printMenu();
     }
     void genratedHallTecketNumber(){
@@ -77,7 +80,7 @@ public class SignUp {
     
 
     System.out.print("Create a password: ");
-    String password = scanner.next();
+    password = scanner.next();
     ListOfHallticketNumbersAndNames.addStudent(newHallTecketNumber,name);
     }
     void displayDetails(){
@@ -91,5 +94,19 @@ public class SignUp {
         System.out.println("Email: " + email);
         System.out.println("Address: " + address);
         System.out.println();
+    }
+    void studentLinkedList(){
+        StudentNode newNode = new StudentNode(name, age, gender, phoneNumber, email, address, newHallTecketNumber, password);
+        if (head == null) {
+            head = newNode;
+        }else{
+            StudentNode temp = head;
+
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+        
     }
 }

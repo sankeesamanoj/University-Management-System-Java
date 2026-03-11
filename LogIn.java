@@ -8,6 +8,7 @@ public class LogIn {
             System.out.print("Enter your password: ");
             password = scanner.next();
             validateLogin.validateStudentLogin(hallTicketNumber,password);
+            scanner.close();
         }
           
 }

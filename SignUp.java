@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Random;
-import java.util.LinkedList;
 
 public class SignUp {
 
@@ -14,10 +13,13 @@ public class SignUp {
     private String email;
     private String address;
     private long newHallTecketNumber;
-    private static LinkedList<Long> listOfGenratedHallTecketNumber = new LinkedList<>();
 
     void setName(String name){
         this.name = name;
+    }
+
+    void setAge(int age){
+        this.age = age;
     }
 
     void setGender(String gender){
@@ -62,16 +64,19 @@ public class SignUp {
         System.out.println();
         System.out.println("=========================================");
         System.out.println("Signup Successful!");
-        System.out.println("HallTecketNumber: "+newHallTecketNumber);
+        System.out.println("Hall Tecket Number: "+newHallTecketNumber);
         System.out.println("=========================================");
         displayDetails();
     }
     void genratedHallTecketNumber(){
     do{
         newHallTecketNumber = random.nextLong(1,9999999999L);
-    }while(listOfGenratedHallTecketNumber.contains(newHallTecketNumber));
+    }while(ListOfHallticketNumbersAndNames.checkHallTicketNumber(newHallTecketNumber));
+    
 
-    listOfGenratedHallTecketNumber.add(newHallTecketNumber);
+    System.out.print("Create a password: ");
+    String password = scanner.next();
+    ListOfHallticketNumbersAndNames.addStudent(newHallTecketNumber,name);
     }
     void displayDetails(){
         System.out.println();
@@ -83,5 +88,7 @@ public class SignUp {
         System.out.println("Phone: " + phoneNumber);
         System.out.println("Email: " + email);
         System.out.println("Address: " + address);
+        System.out.println();
+        Menu.printMenu();
     }
 }

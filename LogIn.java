@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
 public class LogIn {
-        long hallTicketNumber;
-        LogIn(long hallTicketNumber){
-            this.hallTicketNumber = hallTicketNumber;
+        static void check(long hallTicketNumber){
+            System.out.println(ListOfHallticketNumbersAndNames.getStudentName(hallTicketNumber));
         }
-        
+          
 }

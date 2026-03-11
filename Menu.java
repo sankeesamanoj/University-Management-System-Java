@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Menu {
-    public void printMenu(){
+    public static void printMenu(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to my Engineering College");
         System.out.println("===================== MENU =====================");
@@ -16,7 +16,7 @@ public class Menu {
             scanner.nextLine();
             System.out.print("Enter your Hall tecket number (10 degits):  ");
             long  hallTecketNumber = scanner.nextLong();
-            LogIn logln = new LogIn(hallTecketNumber);
+            LogIn.check(hallTecketNumber);
 
             
         }else if (userOption == 2) {
@@ -27,6 +27,10 @@ public class Menu {
             System.out.print("Your Name: ");
             String temp = scanner.next();
             signUp.setName(temp);
+// set age
+            System.out.print("age: ");
+            int age = scanner.nextInt();
+            signUp.setAge(age);
 // set gender
             System.out.print("Gender: ");
             temp = scanner.next();

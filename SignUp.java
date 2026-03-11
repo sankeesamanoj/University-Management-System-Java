@@ -61,12 +61,14 @@ public class SignUp {
     void setAddress(String address){
         this.address = address;
         genratedHallTecketNumber();
+        displayDetails();
         System.out.println();
         System.out.println("=========================================");
         System.out.println("Signup Successful!");
         System.out.println("Hall Tecket Number: "+newHallTecketNumber);
         System.out.println("=========================================");
-        displayDetails();
+        System.out.println();
+        Menu.printMenu();
     }
     void genratedHallTecketNumber(){
     do{
@@ -89,6 +91,5 @@ public class SignUp {
         System.out.println("Email: " + email);
         System.out.println("Address: " + address);
         System.out.println();
-        Menu.printMenu();
     }
 }

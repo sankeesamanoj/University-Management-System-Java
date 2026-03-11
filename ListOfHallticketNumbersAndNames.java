@@ -7,7 +7,7 @@ public class ListOfHallticketNumbersAndNames {
     }
     static String  getStudentName(long hallTicketNumber){
         if (students.containsKey(hallTicketNumber)) {
-            return "Wel-come: "+students.get(hallTicketNumber);
+            return "Welcome: "+students.get(hallTicketNumber);
         }
         else{
             return "You are not registered! ";
